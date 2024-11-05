@@ -17,9 +17,9 @@ dataset <-
     
     .Names = c("OR", "lower", "upper"), 
     
-    row.names = c(NA, -35L), 
-    
     class = "data.frame" )
+
+dataset <- log(dataset+1)
 
 mean(dataset$OR, na.rm = T)
 
@@ -71,10 +71,10 @@ x <- grid.grabExpr(print(forestplot(tabletext,
            xlog=FALSE, 
            boxsize = 0.20,
            col=fpColors(box="black",line="black"),
-           xticks=c(seq(0.5,6,0.5)),
+           xticks=c(seq(0.5,2,0.5)),
            ci.vertices=TRUE,
            title = "MICS 2006",
-           xlab = "Adjusted Odds Ratio (AOR)" 
+           xlab = "Adjusted Odds Ratio (log scale)" 
 )))
 x
 
@@ -98,9 +98,10 @@ dataset <-
     
     .Names = c("OR", "lower", "upper"), 
     
-    row.names = c(NA, -35L), 
-    
     class = "data.frame" )
+
+dataset <- log(dataset+1)
+
 mean(dataset$OR, na.rm = T)
 tabletext<-cbind(
   
@@ -147,10 +148,10 @@ y <- grid.grabExpr(print(forestplot(tabletext,
              xlog=FALSE, 
              boxsize = 0.20,
              col=fpColors(box="black",line="black"),
-             xticks=c(seq(0,30,5)),
+             xticks=c(seq(0,4,0.5)),
              ci.vertices=TRUE,
              title = "MICS 2012",
-             xlab = "Adjusted Odds Ratio" 
+             xlab = "Adjusted Odds Ratio (log scale)" 
   )))
 y
 
@@ -175,9 +176,10 @@ dataset <-
     
     .Names = c("OR", "lower", "upper"), 
     
-    row.names = c(NA, -35L), 
-    
     class = "data.frame" )
+
+dataset <- log(dataset+1)
+
 mean(dataset$OR, na.rm = T)
 tabletext<-cbind(
   
@@ -248,10 +250,10 @@ z <- grid.grabExpr(print(forestplot(tabletext,
              xlog=FALSE, 
              boxsize = 0.20,
              col=fpColors(box="black",line="black"),
-             xticks=c(seq(0,5,0.5)),
+             xticks=c(seq(0,2,0.5)),
              ci.vertices=TRUE,
              title = "MICS 2019",
-             xlab = "Adjusted Odds Ratio (AOR)" 
+             xlab = "Adjusted Odds Ratio (log scale)" 
   )))
 
 z
